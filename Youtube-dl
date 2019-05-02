@@ -1,5 +1,17 @@
 ## Youtube-dl.
 
+Explication:
+
+- L'utilisateur est invité à entrer le lien du vidéo youtube.
+
+- Dès que c'est fait, le lien est alors lu.
+
+- Après la lecture, le son est finalement extrait depuis la vidéo et qui est finalement téléchargé.
+
+
+
+
+
 #!/bin/bash
 
 
