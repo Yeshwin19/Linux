@@ -1,0 +1,32 @@
+# Le jeu de plus ou moins.
+
+#!/bin/bash
+
+secretNumber=$(( ((`date +%N` / 1000) % 100) +1 ))     `#Le numéro secret est obtenu en prenant la date du jour, en la divisant par 1000, en en faisant un modulo de 100 puis en lui ajoutant 1.`
+
+guess=-1                                               `#Initialiser le nombre de guess.`
+
+while [ "$guess" != "$secretNumber" ]; do              `#Si devine n'est pas égal à secretnumber, imprimez le message ci-dessous.`
+    echo -n "I am thinking of a number between 1 and 100. Enter your guess:"
+    
+   read guess                                         
+    
+   if [ "$guess" = "" ]; then                         `#ça c'est pour gérer les exceptions.`
+        
+   echo "Please enter a number."
+    
+   elif [ "$guess" = "$secretNumber" ]; then           
+        
+   echo -e "\aYes! $guess is the correct answer!"
+    
+   elif [ "$secretNumber" -gt "$guess" ]; then
+        
+   echo "The secret number is larger than your guess. Try again."
+    
+   else
+        
+   echo "The secret number is smaller than your guess. Try again."
+    
+   fi
+
+done
