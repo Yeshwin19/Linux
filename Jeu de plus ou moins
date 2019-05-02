@@ -1,5 +1,17 @@
 # Le jeu de plus ou moins.
 
+# Expliquation:
+
+- Le jeu commence en demandant à l'utilisateur d'entrer un nombre / déviner le nombre secret.
+
+- Le nombre secret est calculé en prenant la date, la divisant par 1000, faisant un modulo de 100 du résultat et ensuite ajoutè 1.
+
+- Si le nombre deviné est plus petit que le nombre secret, un message apparaitra sur l'écran disant: "The secret number is larger than your guess. Try again." et il aura encore une chance jusqu'à ce qu'il pourra deviner le numéro.
+
+- Si le le nombre deviné est plus grand que le nombre secret, un méssage apparaitra sur l'écran disant:"The secret number is smaller than your guess. Try again."
+
+- Si le joueur a bien deviné le nombre, un méssage apparaitra sur l'écran disant: "Yes! $guess is the correct answer!"  
+
 #!/bin/bash
 
 secretNumber=$(( ((`date +%N` / 1000) % 100) +1 ))     `#Le numéro secret est obtenu en prenant la date du jour, en la divisant par 1000, en en faisant un modulo de 100 puis en lui ajoutant 1.`
