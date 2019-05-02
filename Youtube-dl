@@ -2,4 +2,10 @@
 
 #!/bin/bash
 
-youtube-dl -x https://www.youtube.com/watch?v=kda8QGA3i-c   `#C’est la ligne de commande qui permet de télécharger une vidéo à partir de YouTube puis d’extraire la musique de la vidéo.`
+
+echo "Hi! Please enter the video whose music you want to download."
+read link
+
+youtube-dl -x $link 2> /dev/null      #Après voir mis l'url du vidéo, cette commande extrairera le son du vidéo.
+ 
+echo "Your musichas been downloaded!"
